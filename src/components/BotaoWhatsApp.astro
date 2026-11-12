@@ -1,0 +1,15 @@
+---
+import { SITE } from "../config/site";
+
+interface Props {
+  mensagem?: string;
+  texto?: string;
+}
+
+const { mensagem = "Olá! Vim pelo site.", texto = "Fale com a gente no WhatsApp" } = Astro.props;
+const link = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(mensagem)}`;
+---
+
+<a class="botao" href={link} target="_blank" rel="noopener">
+  {texto}
+</a>

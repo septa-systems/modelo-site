@@ -1,0 +1,10 @@
+# Instale uma vez: pip install pre-commit && pre-commit install
+repos:
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier (formata)
+        entry: npx prettier --write --ignore-unknown
+        language: system
+        types: [text]
+        exclude: ^package-lock\.json$

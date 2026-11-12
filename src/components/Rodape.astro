@@ -1,0 +1,48 @@
+---
+import { SITE } from "../config/site";
+
+const ano = new Date().getFullYear();
+---
+
+<footer class="rodape">
+  <div class="container rodape__linha">
+    <p>
+      © {ano} {SITE.nome} · {SITE.cidade}
+    </p>
+    <p>
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a> ·
+      <a href={SITE.instagram} rel="noopener">
+        Instagram
+      </a>
+    </p>
+    <p class="rodape__credito">
+      Site feito por{" "}
+      <a href="https://septasystems.com.br" rel="noopener">
+        Septa Systems
+      </a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .rodape {
+    background: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+    padding-block: 2.5rem;
+    font-size: 0.925rem;
+  }
+
+  .rodape__linha {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .rodape p {
+    margin: 0;
+  }
+
+  .rodape__credito {
+    opacity: 0.7;
+    margin-top: 0.75rem !important;
+  }
+</style>

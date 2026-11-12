@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+import Topo from "../components/Topo.astro";
+import Rodape from "../components/Rodape.astro";
+import { SITE } from "../config/site";
+
+interface Props {
+  titulo?: string;
+  descricao?: string;
+  imagem?: string;
+}
+
+const { titulo, descricao = SITE.descricao, imagem = "/compartilhar.png" } = Astro.props;
+const tituloCompleto = titulo ? `${titulo} | ${SITE.nome}` : SITE.nome;
+const urlCanonica = new URL(Astro.url.pathname, Astro.site ?? SITE.url);
+const urlImagem = new URL(imagem, Astro.site ?? SITE.url);
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{tituloCompleto}</title>
+    <meta name="description" content={descricao} />
+    <link rel="canonical" href={urlCanonica} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Compartilhamento (WhatsApp, Instagram, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content={SITE.nome} />
+    <meta property="og:title" content={tituloCompleto} />
+    <meta property="og:description" content={descricao} />
+    <meta property="og:url" content={urlCanonica} />
+    <meta property="og:image" content={urlImagem} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <a class="pular-conteudo" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <Topo />
+    <main id="conteudo">
+      <slot />
+    </main>
+    <Rodape />
+  </body>
+</html>

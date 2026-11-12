@@ -1,0 +1,91 @@
+---
+import Base from "../layouts/Base.astro";
+import BotaoWhatsApp from "../components/BotaoWhatsApp.astro";
+import { SITE } from "../config/site";
+
+// Exemplo: troque pelos serviços reais do cliente.
+const servicos = [
+  { titulo: "Serviço 1", texto: "O que é e qual problema resolve, em uma ou duas frases." },
+  { titulo: "Serviço 2", texto: "O que é e qual problema resolve, em uma ou duas frases." },
+  { titulo: "Serviço 3", texto: "O que é e qual problema resolve, em uma ou duas frases." },
+];
+---
+
+<Base>
+  <section class="secao abertura">
+    <div class="container">
+      <h1>{SITE.nome}</h1>
+      <p class="abertura__texto">{SITE.descricao}</p>
+      <BotaoWhatsApp />
+    </div>
+  </section>
+
+  <section id="servicos" class="secao">
+    <div class="container">
+      <h2>Serviços</h2>
+      <ul class="cartoes">
+        {servicos.map((s) => (
+          <li class="cartao">
+            <h3>{s.titulo}</h3>
+            <p>{s.texto}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="sobre" class="secao sobre">
+    <div class="container">
+      <h2>Sobre</h2>
+      <p>Quem é o negócio, há quanto tempo existe e por que o cliente deve confiar.</p>
+    </div>
+  </section>
+
+  <section id="contato" class="secao">
+    <div class="container">
+      <h2>Contato</h2>
+      <p>Atendemos em {SITE.cidade}. Chame no WhatsApp ou mande um e-mail.</p>
+      <p>
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      </p>
+      <BotaoWhatsApp texto="Chamar no WhatsApp" />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .abertura {
+    padding-block: clamp(4rem, 12vw, 8rem);
+  }
+
+  .abertura__texto {
+    font-size: 1.25rem;
+    color: var(--cor-texto-suave);
+    max-width: 40rem;
+    margin-bottom: 2rem;
+  }
+
+  .cartoes {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .cartao {
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+
+  .cartao p {
+    color: var(--cor-texto-suave);
+    margin: 0;
+  }
+
+  .sobre {
+    background: #fafafa;
+  }
+</style>

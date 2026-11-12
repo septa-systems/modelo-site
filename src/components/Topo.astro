@@ -1,0 +1,70 @@
+---
+import { SITE, MENU } from "../config/site";
+---
+
+<header class="topo">
+  <div class="container topo__linha">
+    <a class="topo__marca" href="/">
+      {SITE.nome}
+    </a>
+    <nav aria-label="Menu principal">
+      <ul class="topo__menu">
+        {MENU.map((item) => (
+          <li>
+            <a href={item.href}>{item.texto}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .topo {
+    border-bottom: 1px solid var(--cor-borda);
+    background: var(--cor-fundo);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  .topo__linha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4rem;
+  }
+
+  .topo__marca {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+
+  .topo__menu {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.95rem;
+  }
+
+  .topo__menu a {
+    text-decoration: none;
+    color: var(--cor-texto-suave);
+  }
+
+  .topo__menu a:hover {
+    color: var(--cor-texto);
+  }
+
+  @media (max-width: 480px) {
+    .topo__menu {
+      gap: 0.85rem;
+      font-size: 0.875rem;
+    }
+  }
+</style>

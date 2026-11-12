@@ -1,0 +1,15 @@
+/* Marca do projeto: troque só este arquivo para mudar cores e fontes.
+   Padrão: cores da Septa Systems. */
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #0a0a0a;
+  --cor-texto-suave: #525252;
+  --cor-borda: #e5e5e5;
+  --cor-destaque: #0d9488; /* verde Septa para fundo claro */
+  --cor-destaque-texto: #ffffff;
+  --cor-fundo-escuro: #000000;
+  --cor-texto-escuro: #fafafa;
+
+  --fonte-titulo: "Outfit Variable", system-ui, sans-serif;
+  --fonte-texto: "Inter Variable", system-ui, sans-serif;
+}
