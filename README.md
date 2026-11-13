@@ -4,12 +4,12 @@ Ponto de partida de todo site e landing page da Septa: **Astro + Vercel**, já c
 
 ## Começar um site novo
 
-1. Clique em **Use this template → Create a new repository** (dono: `septa-systems`).
-   Nome: `site-<cliente>` (ex.: `site-padaria-joao`).
-2. No repositório novo:
-   - Settings → Rules: crie a regra da `main` igual à do manual (PR + aprovação do Tech lead + checagens "Padrão do time" e "Site").
-   - Settings → Code security: ligue Dependabot e Secret scanning.
-   - Settings → General: só "Squash merge" e "Automatically delete head branches".
+1. O Tech lead cria o repo pelo script do manual, que já configura merge, segurança, proteção da `main` e quadro ([docs/NOVO-REPO.md](https://github.com/septa-systems/septa-handbook/blob/main/docs/NOVO-REPO.md)):
+   ```bash
+   scripts/novo-repo.sh site-<cliente> site     # ex.: site-padaria-joao
+   ```
+   Não use só o botão "Use this template": ele copia o código, mas não a configuração.
+2. Baixe: `gh repo clone septa-systems/site-<cliente>`.
 3. Troque os dados de exemplo:
    - `src/config/site.ts`: nome, descrição, WhatsApp, e-mail, Instagram, cidade.
    - `src/styles/marca.css`: cores e fontes do cliente.
