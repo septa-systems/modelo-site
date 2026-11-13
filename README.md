@@ -1,6 +1,6 @@
 # Modelo de site da Septa Systems
 
-Ponto de partida de todo site e landing page da Septa: **Astro + Vercel**, já com SEO, fontes locais, celular primeiro e as regras do time.
+Ponto de partida de todo site e landing page da Septa: **Astro + Cloudflare**, já com SEO, fontes locais, celular primeiro e as regras do time.
 
 ## Começar um site novo
 
@@ -17,7 +17,7 @@ Ponto de partida de todo site e landing page da Septa: **Astro + Vercel**, já c
    - `public/compartilhar.png`: imagem de 1200x630 que aparece ao compartilhar o link.
    - `public/favicon.svg`: ícone do cliente.
 4. Antes de programar: `docs/projeto/` (entrevista, PRD e arquitetura). Ver `docs/projeto/README.md`.
-5. Ligue o repositório no **Vercel** (Add New → Project → importar do GitHub). Cada PR ganha um link de prévia e a `main` vai para o ar.
+5. Ligue o repositório na **Cloudflare**, na conta da Septa (Workers & Pages → criar → importar do GitHub; build `npm run build`, pasta `dist`). Cada PR ganha um link de prévia e a `main` vai para o ar. O domínio do cliente aponta para a Cloudflare (ver `docs/AMBIENTES.md` do manual). Este passo será detalhado depois do 1º teste, no site da Septa.
 
 ## Rodar no PC
 

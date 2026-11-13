@@ -30,7 +30,7 @@ Siga o [`docs/SEGURANCA.md`](https://github.com/septa-systems/septa-handbook/blo
 
 ## Este projeto (site em Astro)
 
-- Stack: Astro (site estático) + Vercel. Sem banco de dados.
+- Stack: Astro (site estático) + Cloudflare. Sem banco de dados.
 - Comandos: `npm run dev` (local em `localhost:4321`), `npm run format` (formata), `npm run verificar` (o mesmo que a checagem do GitHub roda: Prettier, astro check e build).
 - Dados do site (nome, WhatsApp, e-mail, menu): `src/config/site.ts`. Cores e fontes: `src/styles/marca.css`. URL final: `astro.config.mjs` e `public/robots.txt`.
 - Layout com SEO e compartilhamento: `src/layouts/Base.astro`. Componentes em `src/components/`.
