@@ -4,7 +4,7 @@ Ponto de partida de todo site e landing page da Septa: **Astro + Cloudflare**, j
 
 ## Começar um site novo
 
-1. O Tech lead cria o repo pelo script do manual, que já configura merge, segurança, proteção da `main` e quadro ([docs/NOVO-REPO.md](https://github.com/septa-systems/septa-handbook/blob/main/docs/NOVO-REPO.md)):
+1. O Tech lead cria o repo pelo script do manual, que já configura merge, segurança, quadro e o acesso do time `socios` (proteção automática da `main` só em repo público; o de cliente é privado e segue a Regra nº 1 do `CLAUDE.md`) ([docs/NOVO-REPO.md](https://github.com/septa-systems/septa-handbook/blob/main/docs/NOVO-REPO.md)):
    ```bash
    scripts/novo-repo.sh site-<cliente> site     # ex.: site-padaria-joao
    ```
