@@ -9,6 +9,10 @@ updates:
     groups:
       dependencias:
         patterns: ["*"]
+    # Versão grande (major) a gente atualiza à mão, com teste.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
